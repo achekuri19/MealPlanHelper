@@ -30,7 +30,7 @@ function getDaysLeft(){
 	else if(currentDate.getMonth() >=0 && currentDate.getMonth() <= 6) {
 		endDate = new Date(currentDate.getYear(), 4, 21);
 	}
-	return (endDate - currentDate)/(1000 * 3600 * 24);
+	return (endDate.getTime() - currentDate.getTime())/(1000 * 3600 * 24);
 	/*
 	var monthArray = [31,28,31,30,31,30,31,31,30,31,30,31];
 	var currentDate = new Date();
