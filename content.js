@@ -22,6 +22,16 @@ var daysLeft = getDaysLeft();
 window.alert(daysLeft);
 
 function getDaysLeft(){
+	var currentDate = new Date();
+	var endDate = new Date();
+	if(currentDate.getMonth() >=7 && currentDate.getMonth() <= 11) {
+		endDate = new Date(currentDate.getYear(), 11, 19);
+	}
+	else if(currentDate.getMonth() >=0 && currentDate.getMonth() <= 6) {
+		endDate = new Date(currentDate.getYear(), 4, 21);
+	}
+	return (endDate - currentDate)/(1000 * 3600 * 24);
+	/*
 	var monthArray = [31,28,31,30,31,30,31,31,30,31,30,31];
 	var currentDate = new Date();
 	var day = currentDate.getDate();
@@ -58,7 +68,7 @@ function getDaysLeft(){
 	{
 		return endDate - dayOfYear - 5;
 	}
-
+	*/
 }
 
 
