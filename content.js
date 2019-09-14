@@ -1,4 +1,3 @@
-window.alert('This is running');
 var moneyInfo = document.getElementsByClassName('txt grid-cell column2');
 var dineX = 0;
 var meals = 0;
@@ -13,10 +12,12 @@ for(var i = 0; i < moneyInfo.length; i++)
   	meals = parseInt(data);
   }
 }
-window.alert(dineX);
-window.alert(meals);
 var daysLeft = Math.ceil(getDaysLeft());
-window.alert(daysLeft);
+var blocksWeek = Math.round(calculateAverageBlockWeeklyQuota(meals, daysLeft));
+var blocksDay = Math.round(10*calculateAverageBlockDailyQuota(meals, daysLeft))/10;
+var dineXWeek = Math.round(100*calculateAverageDinexWeeklyQuota(dineX, daysLeft))/100;
+var dineXDay = Math.round(100*calculateAverageDinexDailyQuota(dineX, daysLeft))/100;
+window.alert("Blocks left: " + meals + "\nBlocks per week: "+blocksWeek+"\nBlocks per day: "+blocksDay+"\nDineX Left: "+dineX+"\nDineX per week: "+dineXWeek+"\nDineX per day: "+dineXDay);
 
 function getDaysLeft(){
 	var currentDate = new Date();
