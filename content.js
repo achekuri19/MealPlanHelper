@@ -15,20 +15,17 @@ for(var i = 0; i < moneyInfo.length; i++)
 }
 window.alert(dineX);
 window.alert(meals);
-
-
-var daysLeft = getDaysLeft();
-
+var daysLeft = Math.ceil(getDaysLeft());
 window.alert(daysLeft);
 
 function getDaysLeft(){
 	var currentDate = new Date();
 	var endDate = new Date();
 	if(currentDate.getMonth() >=7 && currentDate.getMonth() <= 11) {
-		endDate = new Date(currentDate.getYear(), 11, 19);
+		endDate = new Date(currentDate.getFullYear(), 11, 19);
 	}
 	else if(currentDate.getMonth() >=0 && currentDate.getMonth() <= 6) {
-		endDate = new Date(currentDate.getYear(), 4, 21);
+		endDate = new Date(currentDate.getFullYear(), 4, 21);
 	}
 	return (endDate.getTime() - currentDate.getTime())/(1000 * 3600 * 24);
 	/*
@@ -91,3 +88,6 @@ function calculateAverageDinexDailyQuota(dinex, daysLeft){
 function calculateAverageDinexWeeklyQuota(dinex, daysLeft){
     return dinex/(daysLeft/7);
 }
+
+
+
