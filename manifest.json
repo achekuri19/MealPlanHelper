@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "SIO Meal Plan",
+  "version": "1.0",
+  "description": "Ever wanted to actually spend all your DineX and meal blocks in a semester? Now you can!",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://s3.andrew.cmu.edu/sio/mpa/campuslife/dining",
+        "https://s3.andrew.cmu.edu/sio/mpa/campuslife/dining"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
