@@ -25,8 +25,8 @@ function getDaysLeft(){
 	var monthArray = [31,28,31,30,31,30,31,31,30,31,30,31];
 	var currentDate = new Date();
 	var day = currentDate.getDate();
-	var month = today.getMonth();
-	var year = today.getFullYear();
+	var month = currentDate.getMonth();
+	var year = currentDate.getFullYear();
 	var dayOfYear = 0;
 	var endDate = 0;
 	if(year == 2019){
@@ -67,5 +67,17 @@ function getDaysLeft(){
 //extract meal plan type
 //calculate
 
+function calculateAverageBlockDailyQuota(meals, daysLeft){
+    return meals/daysLeft;
+}
 
+function calculateAverageBlockWeeklyQuota(meals, daysLeft){
+    return meals/(daysLeft/7);
+}
+function calculateAverageDinexDailyQuota(dinex, daysLeft){
+    return dinex/daysLeft;
+}
 
+function calculateAverageDinexWeeklyQuota(dinex, daysLeft){
+    return dinex/(daysLeft/7);
+}
